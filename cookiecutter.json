@@ -1,5 +1,5 @@
 {
-    "project_name": "Rainist Python Project Template",
+    "project_name": "Python Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '') }}",
     "use_black": "n"
