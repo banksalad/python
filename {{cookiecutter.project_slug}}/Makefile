@@ -1,13 +1,13 @@
 check:
 	isort --recursive --check-only
-{% if cookiecutter.use_black|lower == 'y' -%}
+{%- if cookiecutter.use_black|lower == 'y' %}
 	black -S -l 79 --check .
 {%- endif %}
 	pylint **/*.py
 
 format:
 	isort -rc -y
-{% if cookiecutter.use_black|lower == 'y' -%}
+{%- if cookiecutter.use_black|lower == 'y' %}
 	black -S -l 79 .
 {%- endif %}
 
