@@ -18,7 +18,7 @@ echo "[+] black success!"
 
 pylint {{ cookiecutter.package_name }}
 if [ $? -ne 0 ]; then
-  echo "[!] pylint failed! Please fix code before commit"
+  echo "[!] pylint failed! Please fix code before push"
   exit 1
 fi
 echo "[+] pylint success!"
