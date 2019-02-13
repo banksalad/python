@@ -23,4 +23,13 @@ if [ $? -ne 0 ]; then
 fi
 echo "[+] pylint success!"
 
+{% if cookiecutter.use_mypy|lower != 'n' -%}
+mypy {{ cookiecutter.package_name }}
+if [ $? -ne 0 ]; then
+  echo "[!] mypy failed! Please fix code before push"
+  exit 1
+fi
+echo "[+] mypy success!"
+{%- endif %}
+
 exit 0

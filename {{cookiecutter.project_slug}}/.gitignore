@@ -17,6 +17,9 @@ htmlcov/
 coverage.xml
 *.cover
 .pytest_cache/
+{%- if cookiecutter.use_mypy|lower != "n" %}
+.mypy_cache/
+{%- endif %}
 .env
 venv/
 env/

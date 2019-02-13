@@ -4,6 +4,9 @@ check:
 	black -S -l 79 --check .
 {%- endif %}
 	pylint {{ cookiecutter.package_name }}
+{%- if cookiecutter.use_mypy|lower != 'n' %}
+	mypy {{ cookiecutter.package_name }}
+{%- endif %}
 
 format:
 	isort -rc -y
