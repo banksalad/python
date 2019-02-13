@@ -1,0 +1,8 @@
+{%- if cookiecutter.use_black|lower == 'y' -%}
+black==18.9b0
+{%- endif %}
+codecov==2.0.15
+isort==4.3.4
+pylint==2.2.2
+pytest==4.2.0
+pytest-cov==2.6.1
