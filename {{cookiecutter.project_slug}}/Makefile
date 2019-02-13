@@ -15,9 +15,9 @@ test:
 	python -m pytest
 
 coverage:
-	python -m pytest --cov $(PROJECT_DIR) --cov-report term
+	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term
 
 htmlcov:
-	python -m pytest --cov $(PROJECT_DIR) --cov-report html
+	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report html
 	rm -rf /tmp/htmlcov && mv htmlcov /tmp/
 	open /tmp/htmlcov/index.html
