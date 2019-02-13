@@ -3,7 +3,7 @@ check:
 {%- if cookiecutter.use_black|lower == 'y' %}
 	black -S -l 79 --check .
 {%- endif %}
-	pylint **/*.py
+	pylint {{ cookiecutter.package_name }}
 
 format:
 	isort -rc -y

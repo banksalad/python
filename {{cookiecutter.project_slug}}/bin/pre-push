@@ -16,7 +16,7 @@ fi
 echo "[+] black success!"
 {%- endif %}
 
-pylint **/*.py
+pylint {{ cookiecutter.package_name }}
 if [ $? -ne 0 ]; then
   echo "[!] pylint failed! Please fix code before commit"
   exit 1
