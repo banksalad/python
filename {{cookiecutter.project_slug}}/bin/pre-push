@@ -7,7 +7,7 @@ if [ $? -ne 0 ]; then
 fi
 echo "[+] isort success!"
 
-{%- if cookiecutter.use_black|lower == 'y' %}
+{% if cookiecutter.use_black|lower == 'y' -%}
 black -S -l 79 --check .
 if [ $? -ne 0 ]; then
   echo "[!] black failed! Run 'black -S -l 79 .'"
