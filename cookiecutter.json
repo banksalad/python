@@ -2,5 +2,6 @@
     "project_name": "Python Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '') }}",
+    "python_version": ["3.7", "3.6"],
     "use_black": "n"
 }
