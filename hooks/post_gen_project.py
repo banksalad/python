@@ -9,3 +9,9 @@ def remove_file(name):
 if __name__ == '__main__':
     if '{{ cookiecutter.use_mypy|lower }}' == 'do not use':
         remove_file('mypy.ini')
+    if '{{ cookiecutter.user_pipenv|lower }}' == 'n':
+        remove_file('.gitattributes')
+        remove_file('Pipfile')
+    if '{{ cookiecutter.user_pipenv|lower }}' != 'n':
+        remove_file('requirements.txt')
+        remove_file('requirements-dev.txt')
