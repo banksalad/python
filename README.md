@@ -54,3 +54,11 @@ use_black [n]: y
 ```
 
 [`black`](https://github.com/ambv/black) 사용 여부를 설정할 수 있습니다. 설정 시 `pre-push` hook과 `make check`, `make format` 과정에 `black` 이 추가됩니다.
+
+```
+user_pipenv [n]: y
+```
+
+[`pipenv`](https://github.com/pypa/pipenv) 사용 여부를 설정할 수 있습니다.
+
+* `black`과 `pipenv`를 같이 사용할 경우, `black`이 현재 프리릴리즈 상태이므로 `pipenv lock --pre` 명령어로 `Pipfile.lock` 파일을 생성해야합니다.
