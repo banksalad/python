@@ -4,7 +4,7 @@ check:
 	black -S -l 79 --check .
 {%- endif %}
 	pylint {{ cookiecutter.package_name }}
-{%- if cookiecutter.use_mypy|lower != 'n' %}
+{%- if cookiecutter.use_mypy|lower != 'do not use' %}
 	mypy {{ cookiecutter.package_name }}
 {%- endif %}
 

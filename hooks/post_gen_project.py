@@ -7,5 +7,5 @@ def remove_file(name):
 
 
 if __name__ == '__main__':
-    if '{{ cookiecutter.use_mypy|lower }}' == 'n':
+    if '{{ cookiecutter.use_mypy|lower }}' == 'do not use':
         remove_file('mypy.ini')

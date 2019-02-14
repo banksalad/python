@@ -38,16 +38,16 @@ Choose from 1, 2 [1]:
 
 ```
 Select use_mypy:
-1 - n
-2 - easy mode
-3 - hard mode
+1 - do not use
+2 - beginner
+3 - expert
 Choose from 1, 2, 3 [1]: 3
 ```
 
 [`mypy`](https://github.com/python/mypy) 사용 여부를 설정할 수 있습니다. 설정 시 `pre-push` hook과 `make check` 과정에 `mypy` 가 추가됩니다.
 
-* `easy mode`: 타입 힌팅이 있는 함수들만 가지고 타입 검사를 수행합니다.
-* `hard mode`: 타입 힌팅이 없는 함수까지 경고를 발생시킵니다.
+* `beginner`: 타입 힌팅이 있는 함수들만 가지고 타입 검사를 수행합니다.
+* `expert`: 타입 힌팅이 없는 함수까지 경고를 발생시킵니다.
 
 ```
 use_black [n]: y
