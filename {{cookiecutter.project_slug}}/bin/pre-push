@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-isort --recursive --check-only
+isort --recursive --check-only {{ cookiecutter.package_name }}
 if [ $? -ne 0 ]; then
   echo "[!] isort failed! Run 'isort -rc -y'"
   exit 1
