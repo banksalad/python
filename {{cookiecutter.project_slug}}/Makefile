@@ -1,7 +1,7 @@
 check:
 	isort --recursive --check-only {{ cookiecutter.package_name }}
 {%- if cookiecutter.use_black|lower == 'y' %}
-	black -S -l 79 --check .
+	black -S -l 79 --check {{ cookiecutter.package_name }}
 {%- endif %}
 	pylint {{ cookiecutter.package_name }}
 {%- if cookiecutter.use_mypy|lower != 'do not use' %}
@@ -11,7 +11,7 @@ check:
 format:
 	isort -rc -y {{ cookiecutter.package_name }}
 {%- if cookiecutter.use_black|lower == 'y' %}
-	black -S -l 79 .
+	black -S -l 79 {{ cookiecutter.package_name }}
 {%- endif %}
 
 test:
