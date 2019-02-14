@@ -2,7 +2,7 @@
 
 isort --recursive --check-only {{ cookiecutter.package_name }}
 if [ $? -ne 0 ]; then
-  echo "[!] isort failed! Run 'isort -rc -y'"
+  echo "[!] isort failed! Run 'isort -rc -y {{ cookiecutter.package_name }}'"
   exit 1
 fi
 echo "[+] isort success!"
