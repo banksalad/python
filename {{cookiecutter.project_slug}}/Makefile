@@ -1,5 +1,5 @@
 check:
-	isort --recursive --check-only
+	isort --recursive --check-only {{ cookiecutter.package_name }}
 {%- if cookiecutter.use_black|lower == 'y' %}
 	black -S -l 79 --check .
 {%- endif %}
@@ -9,7 +9,7 @@ check:
 {%- endif %}
 
 format:
-	isort -rc -y
+	isort -rc -y {{ cookiecutter.package_name }}
 {%- if cookiecutter.use_black|lower == 'y' %}
 	black -S -l 79 .
 {%- endif %}
