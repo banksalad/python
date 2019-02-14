@@ -12,6 +12,3 @@ if __name__ == '__main__':
     if '{{ cookiecutter.user_pipenv|lower }}' == 'n':
         remove_file('.gitattributes')
         remove_file('Pipfile')
-    if '{{ cookiecutter.user_pipenv|lower }}' != 'n':
-        remove_file('requirements.txt')
-        remove_file('requirements-dev.txt')
