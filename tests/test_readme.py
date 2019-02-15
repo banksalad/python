@@ -15,7 +15,7 @@ def test_bake_project(cookies):
 @pytest.mark.parametrize('travis', ['y', 'n'])
 def test_readme_total_lines(cookies, context, version, black, travis):
     """
-    We expect README.md has below context
+    We expect README.md has below content
     ```
     1 # Python Project
     2

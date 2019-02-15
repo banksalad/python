@@ -1,5 +1,7 @@
 # Rainist Python Project Template
 
+[![Build Status](https://badgen.net/travis/rainist/python)](https://travis-ci.com/Rainist/python)
+
 ## Usage
 
 ```bash
@@ -62,3 +64,11 @@ use_pipenv [n]: y
 [`pipenv`](https://github.com/pypa/pipenv) 사용 여부를 설정할 수 있습니다.
 
 * `black`과 `pipenv`를 같이 사용할 경우, `black`이 현재 프리릴리즈 상태이므로 `pipenv lock --pre` 명령어로 `Pipfile.lock` 파일을 생성해야합니다.
+
+```
+use_travis [y]:
+```
+
+[`Travis-CI`](https://travis-ci.org) 사용 여부를 설정할 수 있습니다.
+
+* 설정 시 [`codecov`](https://codecov.io)를 사용한 커버리지 측정 관련 내용도 자동으로 추가 된 상태입니다. 커버리지 측정을 원하지 않는다면 `.travis.yml`과 `README.md`에서 관련 내용을 삭제해야합니다.
