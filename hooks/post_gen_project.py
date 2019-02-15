@@ -12,3 +12,5 @@ if __name__ == '__main__':
     if '{{ cookiecutter.use_pipenv|lower }}' == 'n':
         remove_file('.gitattributes')
         remove_file('Pipfile')
+    if '{{ cookiecutter.use_travis|lower }}' != 'y':
+        remove_file('.travis.yml')
