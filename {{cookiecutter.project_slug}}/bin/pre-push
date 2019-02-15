@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-isort --recursive --check-only {{ cookiecutter.package_name }}
+isort --recursive --check-only {{ cookiecutter.package_name }} tests
 if [ $? -ne 0 ]; then
-  echo "[!] isort failed! Run 'isort -rc -y'"
+  echo "[!] isort failed! Run 'isort -rc -y {{ cookiecutter.package_name }} tests'"
   exit 1
 fi
 echo "[+] isort success!"
 
 {% if cookiecutter.use_black|lower == 'y' -%}
-black -S -l 79 --check .
+black -S -l 79 --check {{ cookiecutter.package_name }} tests
 if [ $? -ne 0 ]; then
-  echo "[!] black failed! Run 'black -S -l 79 .'"
+  echo "[!] black failed! Run 'black -S -l 79 {{ cookiecutter.package_name }} tests'"
   exit 1
 fi
 echo "[+] black success!"
