@@ -3,8 +3,8 @@
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '') }}",
     "python_version": ["3.7", "3.6"],
+    "use_travis": "y",
     "use_mypy": ["do not use", "beginner", "expert"],
     "use_black": "n",
-    "use_pipenv": "n",
-    "use_travis": "y"
+    "use_pipenv": "n"
 }
