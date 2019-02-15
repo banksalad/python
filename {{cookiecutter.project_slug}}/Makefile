@@ -1,6 +1,17 @@
+.PHONY: init check format test coverage htmlcov
+
+init:
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+	pip install pipenv
+	pipenv install --dev
+{% else %}
+	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
+{%- endif %}
+
 check:
 	isort --recursive --check-only {{ cookiecutter.package_name }} tests
-{%- if cookiecutter.use_black|lower == 'y' %}
+{%- if cookiecutter.use_black|lower != 'n' %}
 	black -S -l 79 --check {{ cookiecutter.package_name }} tests
 {%- endif %}
 	pylint {{ cookiecutter.package_name }}
@@ -10,7 +21,7 @@ check:
 
 format:
 	isort -rc -y {{ cookiecutter.package_name }} tests
-{%- if cookiecutter.use_black|lower == 'y' %}
+{%- if cookiecutter.use_black|lower != 'n' %}
 	black -S -l 79 {{ cookiecutter.package_name }} tests
 {%- endif %}
 
