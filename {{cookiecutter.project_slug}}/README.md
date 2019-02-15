@@ -12,6 +12,7 @@
 
 {%- if cookiecutter.use_travis|lower != 'n' -%}
 [![Build Status](https://badgen.net/badge/travis/passing/green)](https://travis-ci.com/)[![codecov](https://badgen.net/badge/coverage/100%25/green)](https://codecov.io/)
+<!-- You should change codecov, travis badges to valid URL-->
 {%- endif %}
 
 (TBD)

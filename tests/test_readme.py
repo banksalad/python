@@ -31,4 +31,5 @@ def test_readme_total_lines(cookies, context, version, black, travis):
     readme = result.project.join('README.md')
     lines = readme.readlines(cr=False)
 
-    assert len(lines) == 6
+    expected = 7 if travis == 'y' else 6
+    assert len(lines) == expected
