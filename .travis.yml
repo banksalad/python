@@ -1,0 +1,22 @@
+sudo: required
+
+language: python
+
+python:
+  - "3.7-dev"
+  - "3.6"
+
+cache:
+  - pip
+
+services:
+  - docker
+
+before_install:
+  - pip install -U pip
+
+install:
+  - pip install pytest pytest-cookies
+
+script:
+  - pytest
