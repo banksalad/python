@@ -1,10 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-{% if cookiecutter.python_version == "3.7" -%}
-[![Python Version: 3.7](https://badgen.net/badge/python/3.7/blue)](https://docs.python.org/3.7/)
-{%- else -%}
-[![Python Version: 3.6](https://badgen.net/badge/python/3.6/blue)](https://docs.python.org/3.6/)
-{%- endif %}
+[![Python Version: {{ cookiecutter.python_version }}](https://badgen.net/badge/python/{{ cookiecutter.python_version }}/blue)](https://docs.python.org/{{ cookiecutter.python_version }}/)
 
 {%- if cookiecutter.use_black|lower != 'n' -%}
 [![Code Style: Black](https://badgen.net/badge/code%20style/black/black)](https://github.com/ambv/black)

@@ -2,12 +2,11 @@ sudo: required
 
 language: python
 
+dist:
+  - xenial
+
 python:
-{%- if cookiecutter.python_version == "3.7" %}
-  - "3.7-dev"
-{%- else %}
-  - "3.6"
-{%- endif %}
+  - "{{ cookiecutter.python_version }}"
 
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
 
