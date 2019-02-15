@@ -16,7 +16,7 @@ before_install:
   - pip install -U pip
 
 install:
-  - pip install pytest pytest-cookies
+  - pip install -r requirements-dev.txt
 
 script:
   - pytest
