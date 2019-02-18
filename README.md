@@ -1,5 +1,7 @@
 # Rainist Python Project Template
 
+[![Build Status](https://badgen.net/travis/rainist/python)](https://travis-ci.com/Rainist/python)
+
 ## Usage
 
 ```bash
@@ -37,6 +39,16 @@ Choose from 1, 2 [1]:
 사용할 파이썬 런타임 버전을 설정할 수 있습니다. `Dockerfile`, `mypy` 등의 파이썬 버전을 설정하는 데 사용됩니다.
 
 ```
+use_travis [y]:
+```
+
+[`Travis-CI`](https://travis-ci.org) 사용 여부를 설정할 수 있습니다.
+
+* 설정 시 [`codecov`](https://codecov.io)를 사용한 커버리지 측정 관련 내용도 자동으로 추가 된 상태입니다. 커버리지 측정을 원하지 않는다면 `.travis.yml`과 `README.md`에서 관련 내용을 삭제해야합니다.
+* `README.md`에 포함된 travis, codecov 뱃지의 URL을 적절하게 수정해야합니다.
+* Private project를 생성한다면 `README.md`의 travis, codecov 뱃지, `.travis.yml`의 codecov 부분에 토큰을 추가해야합니다.
+
+```
 Select use_mypy:
 1 - do not use
 2 - beginner
@@ -56,7 +68,7 @@ use_black [n]: y
 [`black`](https://github.com/ambv/black) 사용 여부를 설정할 수 있습니다. 설정 시 `pre-push` hook과 `make check`, `make format` 과정에 `black` 이 추가됩니다.
 
 ```
-user_pipenv [n]: y
+use_pipenv [n]: y
 ```
 
 [`pipenv`](https://github.com/pypa/pipenv) 사용 여부를 설정할 수 있습니다.

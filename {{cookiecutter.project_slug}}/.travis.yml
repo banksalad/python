@@ -1,0 +1,43 @@
+sudo: required
+
+language: python
+
+{%- if cookiecutter.python_version == "3.7" %}
+
+dist:
+  - xenial
+{%- endif %}
+
+python:
+  - "{{ cookiecutter.python_version }}"
+
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENVS=1
+    - PIPENV_DONT_LOAD_ENV=1
+{%- endif %}
+
+cache:
+  - pip
+
+before_install:
+  - pip install -U pip
+
+install:
+  - make
+
+script:
+
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+  - pipenv run make check
+  - pipenv run make test
+{%- else %}
+  - make check
+  - make test
+{%- endif %}
+
+after_success:
+  - bash < (curl -s https://codecov.io/bash)
