@@ -1,6 +1,6 @@
 # Rainist Python Project Template
 
-[![Build Status](https://badgen.net/travis/rainist/python)](https://travis-ci.com/Rainist/python)
+`[![Build Status](https://travis-ci.org/Rainist/python.svg?branch=master)](https://travis-ci.org/Rainist/python)`
 
 ## Usage
 
