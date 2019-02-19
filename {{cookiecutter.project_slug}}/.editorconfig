@@ -11,6 +11,7 @@ insert_final_newline = true
 charset = utf-8
 include_trailing_comma = true
 indent_style = space
+known_standard_library = contextvars, dataclasses
 indent_size = 4
 line_length = 79
 multi_line_output = 3
