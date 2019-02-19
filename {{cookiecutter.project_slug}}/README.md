@@ -6,9 +6,40 @@
 [![Code Style: Black](https://badgen.net/badge/code%20style/black/black)](https://github.com/ambv/black)
 {%- endif %}
 
-{%- if cookiecutter.use_travis|lower != 'n' -%}
+{%- if cookiecutter.use_travis|lower == 'y' -%}
 [![Build Status](https://badgen.net/badge/travis/passing/green)](https://travis-ci.com/)[![codecov](https://badgen.net/badge/coverage/100%25/green)](https://codecov.io/)
 <!-- TODO: You should change codecov, travis badges to valid URL-->
 {%- endif %}
 
-(TBD)
+## Getting Started
+
+<!-- TODO: Describe how to prepare to use this project -->
+
+### Installing
+
+```sh
+$ make
+```
+
+## Tests
+
+```sh
+$ make check
+$ make test
+```
+
+## Built With
+
+<!-- TODO: Describe stack of this project -->
+
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+* [Pipenv](https://github.com/pypa/pipenv) - 의존성 관리
+{%- endif %}
+
+## Documents
+
+<!-- TODO: Insert related documents here-->
+
+## License
+
+<!-- TODO: If you want, set license information here-->
