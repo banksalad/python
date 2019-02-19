@@ -15,20 +15,20 @@
 
 <!-- TODO: Describe how to prepare to use this project -->
 
-### Installing
+### Installation
 
 ```sh
 $ make
 ```
 
-## Tests
+## Test
 
 ```sh
 $ make check
 $ make test
 ```
 
-## Built With
+## Requirements
 
 <!-- TODO: Describe stack of this project -->
 
@@ -36,7 +36,7 @@ $ make test
 * [Pipenv](https://github.com/pypa/pipenv) - 의존성 관리
 {%- endif %}
 
-## Documents
+## Related Documents
 
 <!-- TODO: Insert related documents here-->
 
