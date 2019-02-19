@@ -19,6 +19,7 @@
 
 ```sh
 $ make
+$ ./bin/install_hooks.sh
 ```
 
 ## Test
