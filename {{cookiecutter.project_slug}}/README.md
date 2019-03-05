@@ -7,7 +7,7 @@
 {%- endif %}
 
 {%- if cookiecutter.use_travis|lower == 'y' -%}
-&nbsp;[![Build Status](https://badgen.net/badge/travis/passing/green)](https://travis-ci.com/)[![codecov](https://badgen.net/badge/coverage/100%25/green)](https://codecov.io/)
+&nbsp;[![Build Status](https://badgen.net/badge/travis/passing/green)](https://travis-ci.com/)&nbsp;[![codecov](https://badgen.net/badge/coverage/100%25/green)](https://codecov.io/)
 <!-- TODO: You should change codecov, travis badges to valid URL-->
 {%- endif %}
 
