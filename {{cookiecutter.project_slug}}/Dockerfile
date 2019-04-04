@@ -19,7 +19,7 @@ COPY requirements.txt .
 RUN pip wheel -r requirements.txt
 
 # Execution Stage
-FROM build
+FROM base
 
 ENV PYTHONUNBUFFERED=1
 
