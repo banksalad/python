@@ -1,4 +1,4 @@
-.PHONY: init check format test coverage htmlcov
+.PHONY: init check format test coverage htmlcov{% if cookiecutter.use_pipenv|lower != 'n' %} requirements{% endif %}
 
 init:
 {%- if cookiecutter.use_pipenv|lower != 'n' %}

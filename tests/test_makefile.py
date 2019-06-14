@@ -44,3 +44,17 @@ def test_makefile_total_section(cookies, context, black, pipenv, mypy):
     expected = 8
     expected -= 1 if pipenv == 'n' else 0
     assert len(sections) == expected
+
+
+@pytest.mark.parametrize('pipenv', ['y', 'n'])
+def test_makefile_phony(cookies, context, pipenv):
+    ctx = context(pipenv=pipenv)
+    result = cookies.bake(extra_context=ctx)
+
+    makefile = result.project.join('Makefile')
+    lines = makefile.readlines()
+    phony = lines[0]
+
+    expected = 8
+    expected -= 1 if pipenv == 'n' else 0
+    assert len(phony.split(' ')) == expected
