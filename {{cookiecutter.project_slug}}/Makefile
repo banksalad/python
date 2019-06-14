@@ -29,7 +29,7 @@ test:
 	python -m pytest
 
 coverage:
-	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term
+	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term --cov-report xml
 
 htmlcov:
 	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report html
