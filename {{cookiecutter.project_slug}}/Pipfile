@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 isort = "*"
 {%- if cookiecutter.use_black|lower != 'n' %}
-black = "*"
+black = "==19.3b0"
 {%- endif %}
 pylint = "*"
 {%- if cookiecutter.use_mypy|lower != 'do not use' %}
