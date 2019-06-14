@@ -1,4 +1,4 @@
-.PHONY: init check format test coverage htmlcov
+.PHONY: init check format test coverage htmlcov{% if cookiecutter.use_pipenv|lower != 'n' %} requirements{% endif %}
 
 init:
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
@@ -29,9 +29,16 @@ test:
 	python -m pytest
 
 coverage:
-	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term
+	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term --cov-report xml
 
 htmlcov:
 	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report html
 	rm -rf /tmp/htmlcov && mv htmlcov /tmp/
 	open /tmp/htmlcov/index.html
+
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+
+requirements:
+	pipenv lock -r > requirements.txt
+	pipenv lock -dr > requirements-dev.txt
+{%- endif %}

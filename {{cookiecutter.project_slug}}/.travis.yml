@@ -4,8 +4,7 @@ language: python
 
 {%- if cookiecutter.python_version == "3.7" %}
 
-dist:
-  - xenial
+dist: xenial
 {%- endif %}
 
 python:
@@ -30,7 +29,6 @@ install:
   - make
 
 script:
-
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
   - pipenv run make check
   - pipenv run make test
@@ -40,4 +38,9 @@ script:
 {%- endif %}
 
 after_success:
+{%- if cookiecutter.use_pipenv|lower != 'n' %}
+  - pipenv run make coverage
+{%- else %}
+  - make coverage
+{%- endif %}
   - bash < (curl -s https://codecov.io/bash)
