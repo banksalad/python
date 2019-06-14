@@ -4,8 +4,7 @@ language: python
 
 {%- if cookiecutter.python_version == "3.7" %}
 
-dist:
-  - xenial
+dist: xenial
 {%- endif %}
 
 python:
