@@ -1,5 +1,5 @@
 {%- if cookiecutter.python_version == "3.7" -%}
-FROM python:3.7.2-alpine3.9 AS base
+FROM python:3.7.3-alpine3.9 AS base
 {%- else -%}
 FROM python:3.6.8-alpine3.9 AS base
 {%- endif %}
