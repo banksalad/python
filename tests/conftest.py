@@ -4,9 +4,12 @@ import pytest
 @pytest.fixture
 def context():
     def builder(
-        version='3.7', mypy='do not use',
-        black='n', pipenv='n',
-        travis='y', docker='y'
+        version='3.7',
+        mypy='do not use',
+        black='n',
+        pipenv='n',
+        travis='y',
+        docker='y',
     ):
         return {
             'project_name': 'Rainist',
