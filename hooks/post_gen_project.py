@@ -14,3 +14,5 @@ if __name__ == '__main__':
         remove_file('Pipfile')
     if '{{ cookiecutter.use_travis|lower }}' != 'y':
         remove_file('.travis.yml')
+    if '{{ cookiecutter.use_docker|lower }}' != 'y':
+        remove_file('Dockerfile')
