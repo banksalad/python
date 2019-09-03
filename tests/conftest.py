@@ -4,7 +4,9 @@ import pytest
 @pytest.fixture
 def context():
     def builder(
-        version='3.7', mypy='do not use', black='n', pipenv='n', travis='y'
+        version='3.7', mypy='do not use',
+        black='n', pipenv='n',
+        travis='y', docker='y'
     ):
         return {
             'project_name': 'Rainist',
@@ -15,6 +17,7 @@ def context():
             'use_black': black,
             'use_pipenv': pipenv,
             'use_travis': travis,
+            'use_docker': docker,
         }
 
     return builder

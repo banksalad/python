@@ -49,6 +49,13 @@ use_travis [y]:
 * Private project를 생성한다면 `README.md`의 travis, codecov 뱃지, `.travis.yml`의 codecov 부분에 토큰을 추가해야합니다.
 
 ```
+use_docker [y]:
+```
+
+Dockerfile 사용 여부를 설정할 수 있습니다.
+- 설정시 `Dockerfile`이 생성됩니다.
+
+```
 Select use_mypy:
 1 - do not use
 2 - beginner
