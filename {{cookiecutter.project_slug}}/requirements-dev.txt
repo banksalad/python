@@ -2,7 +2,7 @@
 black==19.3b0
 {% endif -%}
 {% if cookiecutter.use_mypy|lower != 'do not use' -%}
-mypy==0.701
+mypy==0.730
 {% endif -%}
 
 codecov==2.0.15
