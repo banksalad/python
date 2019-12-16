@@ -41,6 +41,7 @@ htmlcov:
 	open /tmp/htmlcov/index.html
 
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
+
 .PHONY: requirements
 requirements:
 	pipenv lock -r > requirements.txt
