@@ -1,2 +1,2 @@
-pytest==4.2.0
-pytest-cookies==0.3.0
+pytest==4.6.7
+pytest-cookies==0.4.0
