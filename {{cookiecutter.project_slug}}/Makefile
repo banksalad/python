@@ -1,5 +1,4 @@
-.PHONY: init check format test coverage htmlcov{% if cookiecutter.use_pipenv|lower != 'n' %} requirements{% endif %}
-
+.PHONY: init
 init:
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
 	pip install pipenv
@@ -9,6 +8,7 @@ init:
 	pip install -r requirements-dev.txt
 {%- endif %}
 
+.PHONY: check
 check:
 	isort --recursive --check-only {{ cookiecutter.package_name }} tests
 {%- if cookiecutter.use_black|lower != 'n' %}
@@ -19,25 +19,29 @@ check:
 	mypy {{ cookiecutter.package_name }}
 {%- endif %}
 
+.PHONY: format
 format:
 	isort -rc -y {{ cookiecutter.package_name }} tests
 {%- if cookiecutter.use_black|lower != 'n' %}
 	black -S -l 79 {{ cookiecutter.package_name }} tests
 {%- endif %}
 
+.PHONY: test
 test:
 	python -m pytest
 
+.PHONY: coverage
 coverage:
 	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report term --cov-report xml
 
+.PHONY: htmlcov
 htmlcov:
 	python -m pytest --cov {{ cookiecutter.package_name }} --cov-report html
 	rm -rf /tmp/htmlcov && mv htmlcov /tmp/
 	open /tmp/htmlcov/index.html
 
 {%- if cookiecutter.use_pipenv|lower != 'n' %}
-
+.PHONY: requirements
 requirements:
 	pipenv lock -r > requirements.txt
 	pipenv lock -dr > requirements-dev.txt
