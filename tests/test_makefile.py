@@ -11,14 +11,16 @@ def test_makefile_total_lines(cookies, context, black, pipenv, mypy):
     We expect Makefile has below content
     ```
     1 .PHONY: check
-    2 check:
-    3     isort
-    4     black
-    5
-    6 .PHONY: format
-    7 format:
-    8     isort
-    9     black
+    2 ## check: check if everything's okay
+    3 check:
+    4     isort
+    5     black
+    6
+    7 .PHONY: format
+    8 ## format: format files
+    9 format:
+    10     isort
+    11     black
     ```
     """
     ctx = context(black=black, pipenv=pipenv, mypy=mypy)
@@ -27,10 +29,10 @@ def test_makefile_total_lines(cookies, context, black, pipenv, mypy):
     makefile = result.project.join('Makefile')
     lines = makefile.readlines(cr=False)
 
-    expected = 31
+    expected = 43
     expected -= 2 if black == 'n' else 0
     expected -= 1 if mypy == 'do not use' else 0
-    expected += 5 if pipenv == 'y' else 0
+    expected += 6 if pipenv == 'y' else 0
     assert len(lines) == expected
 
 
@@ -45,8 +47,8 @@ def test_makefile_total_section(cookies, context, black, pipenv, mypy):
     content = makefile.read()
     sections = content.strip().split('\n\n')
 
-    expected = 7
-    expected -= 1 if pipenv == 'n' else 0
+    expected = 8  # init,check,format,test,coverage,htmlcov,requirements,help
+    expected -= 1 if pipenv == 'n' else 0  # requirements
     assert len(sections) == expected
 
 
@@ -59,6 +61,6 @@ def test_makefile_phony(cookies, context, pipenv):
 
     phonies = re.findall(r'\.PHONY: (\w+)', makefile.read())
 
-    expected = 7
-    expected -= 1 if pipenv == 'n' else 0
+    expected = 8  # init,check,format,test,coverage,htmlcov,requirements,help
+    expected -= 1 if pipenv == 'n' else 0  # requirements
     assert len(set(phonies)) == expected
