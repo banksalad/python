@@ -15,13 +15,13 @@ $ cookiecutter https://github.com/rainist/python
 project_name [Python Project]: My Python Project
 ```
 
-프로젝트 이름을 설정할 수 있습니다. 보통의 이름을 적듯 `-` 와 `_` 없이 설정합니다.
+프로젝트 이름을 설정할 수 있습니다. 보통의 이름을 적듯 `-` 와 `_` 없이 설정합니다. [English : You can set the project name. Set it without `-` and `_` as if writing a normal name.]
 
 ```
 project_slug [my-python-project]: sample-python
 ```
 
-프로젝트 폴더 이름을 설정할 수 있습니다. 보통 GitHub Repository로 쓰이는 이름과 같게 설정합니다.
+프로젝트 폴더 이름을 설정할 수 있습니다. 보통 GitHub Repository로 쓰이는 이름과 같게 설정합니다. [English : You can set the project folder name. Set it the same as the name usually used as GitHub Repository.]
 
 ```
 package_name [samplepython]: app
